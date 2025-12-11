@@ -4,156 +4,274 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daksh Property & Builders - Trusted Real Estate & Construction</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <meta name="description" content="Daksh Property & Builders offers 35+ years of trusted real estate, property sales & purchase, and construction services in Ambala Cantt, Haryana. Contact us for land, plots, houses, shops, and construction projects.">
-  <meta name="keywords" content="Daksh Property, Builders Ambala Cantt, Real Estate Ambala, Property Sale Ambala, Property Purchase Ambala, Construction Services, Land Deals, Plots Ambala, House Construction, Shop Construction, Army Tenders, Plumbing Services">
+  <meta name="description" content="Daksh Property & Builders offers 35+ years of trusted real estate, property sales & purchase, and construction services in Ambala Cantt, Haryana.">
+  <meta name="keywords" content="Daksh Property, Builders Ambala Cantt, Real Estate Ambala, Property Sale Ambala, Construction Services">
   <link rel="canonical" href="https://www.yourwebsite.com/">
-  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts - Distinctive Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    /* Enhanced CSS Variables */
+    /* ===== CSS Variables ===== */
     :root {
-      --primary-color: #1e3a8a;
-      --primary-light: #3b82f6;
-      --secondary-color: #1e40af;
-      --accent-color: #10b981;
-      --accent-hover: #059669;
-      --text-primary: #1f2937;
-      --text-secondary: #6b7280;
-      --bg-primary: #ffffff;
-      --bg-secondary: #f8fafc;
-      --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-      --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
-      --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
-      --shadow-xl: 0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04);
-      --border-radius: 12px;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --primary: #0a1628;
+      --primary-light: #1a2d4a;
+      --secondary: #c9a227;
+      --secondary-light: #e8c547;
+      --accent: #25D366;
+      --text-dark: #1a1a1a;
+      --text-medium: #4a5568;
+      --text-light: #718096;
+      --bg-light: #f8f9fc;
+      --bg-cream: #fdfbf7;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.08);
+      --shadow-md: 0 8px 24px rgba(10, 22, 40, 0.12);
+      --shadow-lg: 0 16px 48px rgba(10, 22, 40, 0.16);
+      --shadow-gold: 0 8px 32px rgba(201, 162, 39, 0.25);
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    * {
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 400;
       line-height: 1.7;
-      background: var(--bg-secondary);
-      color: var(--text-primary);
+      color: var(--text-dark);
+      background: var(--bg-light);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
-    /* Enhanced Typography */
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
+    /* ===== Typography ===== */
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
       line-height: 1.2;
-      letter-spacing: -0.025em;
-      color: var(--text-primary);
+      color: var(--primary);
     }
 
     h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
     h2 { font-size: clamp(2rem, 4vw, 3rem); }
-    h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-    h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+    h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+    h4 { font-size: 1.125rem; }
 
     p {
-      color: var(--text-secondary);
+      color: var(--text-medium);
       margin-bottom: 1rem;
-      font-weight: 400;
     }
 
-    /* Enhanced Navigation */
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    /* ===== Container ===== */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ===== Navigation ===== */
     .navbar {
-      background: rgba(30, 58, 138, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 1rem 0;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      transition: var(--transition);
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 1rem 0;
+      transition: all var(--transition-smooth);
     }
 
     .navbar.scrolled {
-      background: rgba(30, 58, 138, 0.98);
-      box-shadow: var(--shadow-lg);
+      padding: 0.75rem 0;
+      box-shadow: var(--shadow-md);
     }
 
     .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
     .logo {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: white;
-      text-decoration: none;
     }
 
-    .logo-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--accent-color);
+    .logo-img {
+      height: 48px;
+      width: auto;
       border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .logo-text span {
+      color: var(--secondary);
     }
 
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 2rem;
-      align-items: center;
+      gap: 2.5rem;
     }
 
     .nav-links a {
-      color: white;
-      text-decoration: none;
+      color: rgba(255, 255, 255, 0.85);
       font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: var(--transition);
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
       position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width var(--transition-smooth);
     }
 
     .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-1px);
+      color: var(--white);
     }
 
-    .mobile-menu-btn {
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--secondary);
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
       display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
+      flex-direction: column;
+      gap: 6px;
       cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
     }
 
-    /* Hero Section */
+    .menu-toggle span {
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--white);
+      transition: all var(--transition-fast);
+      transform-origin: center;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--primary);
+      z-index: 999;
+      padding: 100px 2rem 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-smooth);
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .mobile-menu a {
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 500;
+      display: block;
+      transform: translateX(-20px);
+      opacity: 0;
+      transition: all var(--transition-smooth);
+    }
+
+    .mobile-menu.active a {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .mobile-menu.active li:nth-child(1) a { transition-delay: 0.1s; }
+    .mobile-menu.active li:nth-child(2) a { transition-delay: 0.15s; }
+    .mobile-menu.active li:nth-child(3) a { transition-delay: 0.2s; }
+    .mobile-menu.active li:nth-child(4) a { transition-delay: 0.25s; }
+    .mobile-menu.active li:nth-child(5) a { transition-delay: 0.3s; }
+    .mobile-menu.active li:nth-child(6) a { transition-delay: 0.35s; }
+    .mobile-menu.active li:nth-child(7) a { transition-delay: 0.4s; }
+
+    /* ===== Hero Section ===== */
     .hero {
-      background: var(--bg-gradient);
+      position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
-      position: relative;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #2d4a6a 100%);
       overflow: hidden;
+      padding-top: 80px;
     }
 
     .hero::before {
@@ -163,150 +281,307 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-      opacity: 0.3;
+      background: 
+        radial-gradient(ellipse at 20% 50%, rgba(201, 162, 39, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(201, 162, 39, 0.08) 0%, transparent 40%),
+        radial-gradient(ellipse at 60% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
     }
 
     .hero-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      text-align: center;
       position: relative;
-      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 900px;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201, 162, 39, 0.15);
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero-badge span {
+      color: var(--secondary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .hero h1 {
-      color: white;
+      color: var(--white);
       margin-bottom: 1.5rem;
-      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      animation: fadeInUp 0.8s ease-out 0.1s backwards;
     }
 
-    .hero p {
-      font-size: 1.25rem;
-      color: rgba(255, 255, 255, 0.9);
+    .hero h1 span {
+      color: var(--secondary);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: rgba(255, 255, 255, 0.8);
       margin-bottom: 2.5rem;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      animation: fadeInUp 0.8s ease-out 0.2s backwards;
     }
 
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* Enhanced Buttons */
-    .btn {
+    .hero-cta {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 2rem;
-      border-radius: var(--border-radius);
+      gap: 0.75rem;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 1rem 2rem;
+      border-radius: 8px;
       font-weight: 600;
-      text-decoration: none;
-      transition: var(--transition);
-      cursor: pointer;
-      border: none;
       font-size: 1rem;
-      position: relative;
-      overflow: hidden;
+      letter-spacing: 0.02em;
+      box-shadow: var(--shadow-gold);
+      transition: all var(--transition-smooth);
+      animation: fadeInUp 0.8s ease-out 0.3s backwards;
     }
 
-    .btn::before {
-      content: '';
+    .hero-cta:hover {
+      background: var(--secondary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(201, 162, 39, 0.35);
+    }
+
+    .hero-cta svg {
+      width: 20px;
+      height: 20px;
+      transition: transform var(--transition-fast);
+    }
+
+    .hero-cta:hover svg {
+      transform: translateX(4px);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 4rem;
+      animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--secondary);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .scroll-indicator {
       position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
     }
 
-    .btn:hover::before {
-      left: 100%;
+    .scroll-indicator svg {
+      width: 32px;
+      height: 32px;
+      color: rgba(255, 255, 255, 0.5);
     }
 
-    .btn-primary {
-      background: var(--accent-color);
-      color: white;
-      box-shadow: var(--shadow-md);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: var(--primary-color);
-      transform: translateY(-2px);
-    }
-
-    /* Section Styling */
-    .section {
-      padding: 5rem 0;
-      position: relative;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
+    /* ===== Section Styles ===== */
+    section {
+      padding: 6rem 0;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 4rem;
+      max-width: 700px;
+      margin: 0 auto 4rem;
     }
 
-    .section-subtitle {
-      color: var(--accent-color);
+    .section-tag {
+      display: inline-block;
+      color: var(--secondary);
       font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-size: 0.875rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-title {
       margin-bottom: 1rem;
     }
 
-    .section-description {
-      font-size: 1.125rem;
-      max-width: 600px;
-      margin: 0 auto;
+    .section-header h2 {
+      margin-bottom: 1rem;
     }
 
-    /* Enhanced Services Grid */
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+    }
+
+    /* ===== About Section ===== */
+    #about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .about-owners {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .owner-avatars {
+      display: flex;
+    }
+
+    .owner-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 3px solid var(--white);
+      margin-left: -12px;
+    }
+
+    .owner-avatar:first-child {
+      margin-left: 0;
+    }
+
+    .owner-info strong {
+      display: block;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .owner-info span {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 16px;
+      transition: all var(--transition-smooth);
+      border: 1px solid transparent;
+    }
+
+    .feature-card:hover {
+      background: var(--white);
+      border-color: rgba(201, 162, 39, 0.2);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.75rem;
+    }
+
+    .feature-card h4 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin: 0;
+    }
+
+    /* ===== Services Section ===== */
+    #services {
+      background: var(--bg-cream);
+    }
+
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
 
     .service-card {
-      background: var(--bg-primary);
-      padding: 2.5rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-md);
-      transition: var(--transition);
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-smooth);
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .service-card::before {
@@ -314,802 +589,893 @@
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--accent-color);
-      transform: scaleX(0);
-      transition: var(--transition);
+      width: 4px;
+      height: 0;
+      background: var(--secondary);
+      transition: height var(--transition-smooth);
     }
 
     .service-card:hover {
       transform: translateY(-8px);
-      box-shadow: var(--shadow-xl);
+      box-shadow: var(--shadow-lg);
     }
 
     .service-card:hover::before {
-      transform: scaleX(1);
+      height: 100%;
     }
 
     .service-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
 
-    .service-card h3 {
-      margin-bottom: 1rem;
-      color: var(--text-primary);
+    .service-card h4 {
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
     }
 
     .service-card p {
-      line-height: 1.6;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin: 0;
     }
 
-    /* Projects Section */
-    .project-filters {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
+    /* ===== Office Section ===== */
+    #office {
+      background: var(--white);
     }
 
-    .filter-btn {
-      padding: 0.75rem 1.5rem;
-      border: 2px solid var(--primary-color);
-      background: transparent;
-      color: var(--primary-color);
-      border-radius: 25px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: var(--primary-color);
-      color: white;
-    }
-
-    .projects-grid {
+    .office-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
     }
 
-    .project-card {
-      background: var(--bg-primary);
-      border-radius: var(--border-radius);
+    .office-card {
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: var(--shadow-md);
-      transition: var(--transition);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-smooth);
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .project-image {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .project-info {
-      padding: 1.5rem;
-    }
-
-    .project-info h4 {
-      margin-bottom: 0.5rem;
-      color: var(--text-primary);
-    }
-
-    .project-info p {
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .project-details {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .project-details span {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      background: var(--bg-secondary);
-      padding: 0.25rem 0.75rem;
-      border-radius: 15px;
-    }
-
-    /* Certifications Section */
-    .certifications-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .cert-card {
-      background: var(--bg-secondary);
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-md);
-      text-align: center;
-      transition: var(--transition);
-      border: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .cert-card:hover {
-      transform: translateY(-5px);
+    .office-card:hover {
+      transform: translateY(-8px);
       box-shadow: var(--shadow-lg);
     }
 
-    .cert-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-      border-radius: 15px;
+    .office-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform var(--transition-smooth);
+    }
+
+    .office-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .office-card-content {
+      padding: 1.5rem;
+    }
+
+    .office-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    .office-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin: 0;
+    }
+
+    /* ===== Projects Slider Section ===== */
+    #recent-projects {
+      background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-cream) 100%);
+    }
+
+    .slider-container {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .slider-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+    }
+
+    .slider-item {
+      cursor: pointer;
+      background: var(--white);
+    }
+
+    .slider-item img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .slider-caption {
+      padding: 1.5rem 2rem 0.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .slider-description {
+      padding: 0 2rem 2rem;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+
+    .slider-nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--white);
+      border: none;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.75rem;
-      margin: 0 auto 1rem;
-      color: white;
+      font-size: 1.25rem;
+      color: var(--primary);
+      transition: all var(--transition-fast);
+      z-index: 10;
     }
 
-    .cert-card h4 {
-      margin-bottom: 0.75rem;
-      color: var(--text-primary);
+    .slider-nav-button:hover {
+      background: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-50%) scale(1.1);
     }
 
-    .cert-card p {
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
+    .slider-nav-button.left-4 {
+      left: 1rem;
     }
 
-    .cert-details {
+    .slider-nav-button.right-4 {
+      right: 1rem;
+    }
+
+    .slider-dots {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       gap: 0.5rem;
+      padding: 1.5rem;
+      background: var(--white);
     }
 
-    .cert-details span {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      background: var(--bg-primary);
-      padding: 0.25rem 0.75rem;
-      border-radius: 12px;
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      border: 2px solid var(--text-light);
+      cursor: pointer;
+      transition: all var(--transition-fast);
     }
 
-    /* About Section */
-    .about-section {
-      background: var(--bg-primary);
-      border-radius: var(--border-radius);
-      padding: 3rem;
-      box-shadow: var(--shadow-lg);
-      margin: 2rem 0;
+    .slider-dot:hover {
+      background: var(--text-light);
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+    .slider-dot.active {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      transform: scale(1.2);
+    }
+
+    .view-all-projects {
+      text-align: center;
       margin-top: 3rem;
     }
 
-    .stat-item {
-      text-align: center;
-      padding: 1.5rem;
-      background: var(--bg-secondary);
-      border-radius: var(--border-radius);
-      transition: var(--transition);
-    }
-
-    .stat-item:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--accent-color);
-      display: block;
-      line-height: 1;
-    }
-
-    .stat-label {
-      color: var(--text-secondary);
+    .view-all-projects a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
       font-weight: 600;
-      margin-top: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      transition: all var(--transition-fast);
     }
 
-    /* Contact Section */
+    .view-all-projects a:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    /* ===== Certificates Section ===== */
+    #certificates {
+      background: var(--white);
+    }
+
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .certificate-card {
+      background: var(--bg-light);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all var(--transition-smooth);
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .certificate-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .certificate-card-content {
+      padding: 1.5rem;
+    }
+
+    .certificate-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .certificate-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin: 0;
+    }
+
+    /* ===== Contact Section ===== */
+    #contact {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+    }
+
+    #contact .section-tag {
+      color: var(--secondary);
+    }
+
+    #contact h2 {
+      color: var(--white);
+    }
+
+    #contact .section-header p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
-      margin-top: 3rem;
     }
 
     .contact-card {
-      background: var(--bg-primary);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
       padding: 2rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-md);
       text-align: center;
-      transition: var(--transition);
-      border: 1px solid rgba(0,0,0,0.05);
+      transition: all var(--transition-smooth);
     }
 
     .contact-card:hover {
+      background: rgba(255, 255, 255, 0.12);
       transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
     }
 
     .contact-icon {
       width: 60px;
       height: 60px;
-      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-      border-radius: 15px;
+      background: rgba(201, 162, 39, 0.2);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
       margin: 0 auto 1rem;
-      color: white;
+      font-size: 1.5rem;
     }
 
-    /* Footer */
-    .footer {
-      background: var(--primary-color);
-      color: white;
-      padding: 3rem 0 1.5rem;
+    .contact-card h4 {
+      color: var(--white);
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-card a,
+    .contact-card p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1rem;
+      margin: 0;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-card a:hover {
+      color: var(--secondary);
+    }
+
+    /* WhatsApp CTA */
+    .whatsapp-cta {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .whatsapp-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--accent);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+      transition: all var(--transition-smooth);
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-button img {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #050d18;
+      color: var(--white);
+      padding: 4rem 0 2rem;
     }
 
     .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
     }
 
-    .footer-links {
+    .footer-logo {
       display: flex;
-      justify-content: center;
-      gap: 2rem;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo img {
+      height: 50px;
+      border-radius: 8px;
+    }
+
+    .footer-logo span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
       margin-bottom: 2rem;
-      flex-wrap: wrap;
     }
 
-    .footer-links a {
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
+    .footer-social a {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
     }
 
-    .footer-links a:hover {
-      color: white;
+    .footer-social a:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
     }
 
-    /* Animations */
-    .fade-in {
+    .footer-social img {
+      width: 24px;
+      height: 24px;
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* ===== Modal ===== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
       opacity: 0;
-      transform: translateY(30px);
+      visibility: hidden;
+      transition: all var(--transition-smooth);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: var(--white);
+      border-radius: 16px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow: hidden;
+      position: relative;
+      transform: scale(0.9);
+      transition: transform var(--transition-smooth);
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      z-index: 10;
+    }
+
+    .modal-close-button:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .modal-image {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+    }
+
+    .modal-image-caption {
+      padding: 1.5rem;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      40% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+      60% {
+        transform: translateX(-50%) translateY(-5px);
+      }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .fade-in.visible {
+    .animate-on-scroll.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .slide-in-left {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .slide-in-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .slide-in-right {
-      opacity: 0;
-      transform: translateX(50px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .slide-in-right.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .mobile-menu-btn {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--primary-color);
-        flex-direction: column;
-        padding: 1rem;
-        box-shadow: var(--shadow-lg);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hero {
-        min-height: 80vh;
-        padding-top: 80px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .btn {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-      }
-
-      .services-grid,
-      .contact-grid,
-      .projects-grid,
-      .certifications-grid {
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .about-grid {
         grid-template-columns: 1fr;
+        gap: 3rem;
       }
 
-      .stats-grid {
+      .services-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .section {
-        padding: 3rem 0;
+      .contact-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
       }
 
-      .about-section {
-        padding: 2rem;
+      .menu-toggle {
+        display: flex;
       }
 
-      .project-filters {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
+      .mobile-menu {
+        display: block;
       }
 
-      .filter-btn {
-        white-space: nowrap;
+      .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .hero-stat-number {
+        font-size: 2.5rem;
+      }
+
+      .features-grid,
+      .services-grid,
+      .office-grid,
+      .certificates-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .slider-item img {
+        height: 300px;
+      }
+
+      section {
+        padding: 4rem 0;
       }
     }
 
     @media (max-width: 480px) {
-      .container {
-        padding: 0 1rem;
+      .hero-cta {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
       }
 
-      .stats-grid {
-        grid-template-columns: 1fr;
+      .slider-nav-button {
+        width: 40px;
+        height: 40px;
       }
-
-      .footer-links {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-
-    /* Loading Animation */
-    .loading-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--primary-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease;
-    }
-
-    .loading-spinner {
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      border-top: 3px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Scroll Progress Bar */
-    .scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 3px;
-      background: var(--accent-color);
-      z-index: 1001;
-      transition: width 0.1s ease;
     }
   </style>
 </head>
 <body>
-  <!-- Loading Overlay -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="loading-spinner"></div>
-  </div>
-
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#home" class="logo">
-        <div class="logo-icon">🏗️</div>
-        <span>Daksh Property & Builders</span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
+      <div class="logo">
+        <img src="assets/images/logo.jpeg" alt="Daksh Property & Builders" class="logo-img" id="navLogo" style="cursor: pointer;" onclick="openLogoModal()">
+        <span class="logo-text">Daksh <span>Property & Builders</span></span>
+      </div>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#office">Office</a></li>
+        <li><a href="#recent-projects">Projects</a></li>
+        <li><a href="projects.html">Gallery</a></li>
+        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
 
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#office">Office</a></li>
+      <li><a href="#recent-projects">Projects</a></li>
+      <li><a href="projects.html">Gallery</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
   <!-- Hero Section -->
-  <section id="home" class="hero">
+  <section class="hero">
+    <div class="hero-pattern"></div>
     <div class="hero-content">
-      <h1 class="fade-in">Daksh Property & Builders</h1>
-      <p class="fade-in">35+ Years of Trusted Real Estate & Construction Excellence in Ambala Cantt, Haryana. Your Dream Property Awaits!</p>
-      <div class="hero-buttons fade-in">
-        <a href="#contact" class="btn btn-primary">
-          📞 Get Free Quote
-        </a>
-        <a href="#services" class="btn btn-secondary">
-          🔍 Explore Services
-        </a>
+      <div class="hero-badge">
+        <span>🏆 35+ Years of Excellence</span>
+      </div>
+      <h1>Building Dreams,<br><span>Creating Futures</span></h1>
+      <p class="hero-subtitle">Your trusted partner in real estate and construction services in Ambala Cantt, Haryana. Excellence delivered since 1989.</p>
+      <a href="#contact" class="hero-cta">
+        Get in Touch
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number">35+</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">500+</div>
+          <div class="hero-stat-label">Projects Completed</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">100%</div>
+          <div class="hero-stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content animate-on-scroll">
+          <span class="section-tag">About Us</span>
+          <h2>A Legacy of Trust & Quality Construction</h2>
+          <p>With over 35 years of unparalleled experience, Daksh Property & Builders stands as a pillar of trust and reliability in the real estate and construction sector in Ambala Cantt and surrounding regions.</p>
+          <p>We specialize in providing comprehensive property solutions tailored to your needs, from facilitating seamless property transactions to executing high-quality construction projects.</p>
+          <div class="about-owners">
+            <div class="owner-avatars">
+              <div class="owner-avatar">IS</div>
+              <div class="owner-avatar">AP</div>
+            </div>
+            <div class="owner-info">
+              <strong>Inder Sain & Ajay Parjapat</strong>
+              <span>Founders & Directors</span>
+            </div>
+          </div>
+        </div>
+        <div class="features-grid animate-on-scroll">
+          <div class="feature-card">
+            <div class="feature-icon">🏗️</div>
+            <h4>35+ Years Experience</h4>
+            <p>Decades of expertise for informed decisions and successful outcomes.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h4>Trusted Partner</h4>
+            <p>Deep roots in Ambala community, built on integrity.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏢</div>
+            <h4>Complete Solutions</h4>
+            <p>From land deals to construction under one roof.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h4>Quality Commitment</h4>
+            <p>Excellence in every project, ensuring durability.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="section">
+  <section id="services">
     <div class="container">
-      <div class="section-header">
-        <div class="section-subtitle fade-in">Our Expertise</div>
-        <h2 class="section-title fade-in">Comprehensive Real Estate Solutions</h2>
-        <p class="section-description fade-in">From property transactions to construction projects, we deliver excellence in every service with three decades of trusted experience.</p>
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Our Services</span>
+        <h2>Comprehensive Property Solutions</h2>
+        <p>From property transactions to construction projects, we offer end-to-end services tailored to your needs.</p>
       </div>
-      
       <div class="services-grid">
-        <div class="service-card fade-in">
+        <div class="service-card animate-on-scroll">
           <div class="service-icon">🏠</div>
-          <h3>Property Sales & Purchase</h3>
-          <p>Expert guidance in residential and commercial property transactions with complete legal documentation and market analysis for the best deals.</p>
+          <h4>Property Sale & Purchase</h4>
+          <p>Expert assistance in buying and selling residential and commercial properties.</p>
         </div>
-        
-        <div class="service-card fade-in">
-          <div class="service-icon">🏗️</div>
-          <h3>Construction Services</h3>
-          <p>End-to-end construction solutions using premium materials and modern techniques for houses, shops, and commercial buildings.</p>
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">🌾</div>
+          <h4>Agriculture Land Dealing</h4>
+          <p>Specialized services for acquisition and sale of agricultural lands.</p>
         </div>
-        
-        <div class="service-card fade-in">
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">🏭</div>
+          <h4>Factory Space Arrangements</h4>
+          <p>Helping businesses find and secure suitable industrial spaces.</p>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">🔨</div>
+          <h4>Construction Projects</h4>
+          <p>From residential homes to commercial complexes, we build it all.</p>
+        </div>
+        <div class="service-card animate-on-scroll">
           <div class="service-icon">🎖️</div>
-          <h3>Army Tenders & Projects</h3>
-          <p>Specialized expertise in military construction projects and army tenders with security clearance and quality assurance.</p>
+          <h4>Army Tenders & Contracts</h4>
+          <p>Experienced in government and army contractual works.</p>
         </div>
-        
-        <div class="service-card fade-in">
+        <div class="service-card animate-on-scroll">
           <div class="service-icon">🔧</div>
-          <h3>Plumbing & Maintenance</h3>
-          <p>Professional plumbing installation, repair services, and property maintenance with 24/7 emergency support.</p>
-        </div>
-        
-        <div class="service-card fade-in">
-          <div class="service-icon">🌍</div>
-          <h3>Land & Plot Development</h3>
-          <p>Prime land opportunities with clear titles, proper documentation, and development potential in strategic locations.</p>
-        </div>
-        
-        <div class="service-card fade-in">
-          <div class="service-icon">🏪</div>
-          <h3>Commercial Development</h3>
-          <p>Complete commercial property solutions including shop construction, office spaces, and business establishment services.</p>
+          <h4>Plumbing & Repairs</h4>
+          <p>Reliable and efficient plumbing and general repair solutions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section">
+  <!-- Office Section -->
+  <section id="office">
     <div class="container">
-      <div class="section-header">
-        <div class="section-subtitle fade-in">Our Portfolio</div>
-        <h2 class="section-title fade-in">Completed Projects</h2>
-        <p class="section-description fade-in">Explore our impressive portfolio of residential, commercial, and infrastructure projects that showcase our commitment to quality and excellence.</p>
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Our Office</span>
+        <h2>Visit Our Professional Space</h2>
+        <p>Experience our commitment to quality and professionalism firsthand at our Ambala Cantt office.</p>
       </div>
-      
-      <div class="project-filters fade-in">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="residential">Residential</button>
-        <button class="filter-btn" data-filter="commercial">Commercial</button>
-        <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
-      </div>
-      
-      <div class="projects-grid">
-        <div class="project-card fade-in" data-category="residential">
-          <div class="project-image">
-            <svg width="100%" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="200" fill="#f0f9ff"/>
-              <rect x="50" y="60" width="300" height="120" fill="#1e40af" rx="8"/>
-              <rect x="70" y="80" width="60" height="80" fill="#3b82f6"/>
-              <rect x="150" y="80" width="60" height="80" fill="#3b82f6"/>
-              <rect x="230" y="80" width="60" height="80" fill="#3b82f6"/>
-              <rect x="310" y="80" width="20" height="80" fill="#059669"/>
-              <text x="200" y="30" text-anchor="middle" fill="#1e40af" font-size="16" font-weight="bold">Luxury Villa Project</text>
-            </svg>
-          </div>
-          <div class="project-info">
-            <h4>Modern Luxury Villa</h4>
-            <p>4 BHK independent villa with modern amenities in Bhagwanpur</p>
-            <div class="project-details">
-              <span>📍 Haridwar</span>
-              <span>🏠 4 BHK</span>
-              <span>📅 2020</span>
-            </div>
+      <div class="office-grid">
+        <div class="office-card animate-on-scroll">
+          <img src="assets/images/Office_front.jpeg" alt="Office Front View">
+          <div class="office-card-content">
+            <h3>Our Office Front</h3>
+            <p>The inviting exterior of our office, ready to welcome you for consultations.</p>
           </div>
         </div>
-        
-        <div class="project-card fade-in" data-category="commercial">
-          <div class="project-image">
-            <svg width="100%" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="200" fill="#f0fdf4"/>
-              <rect x="30" y="40" width="340" height="140" fill="#059669" rx="8"/>
-              <rect x="50" y="60" width="80" height="100" fill="#10b981"/>
-              <rect x="150" y="60" width="80" height="100" fill="#10b981"/>
-              <rect x="250" y="60" width="80" height="100" fill="#10b981"/>
-              <text x="200" y="25" text-anchor="middle" fill="#059669" font-size="16" font-weight="bold">Shopping Complex</text>
-            </svg>
-          </div>
-          <div class="project-info">
-            <h4>Commercial Shopping Complex</h4>
-            <p>Multi-story shopping complex with 50+ retail spaces</p>
-            <div class="project-details">
-              <span>📍 Ambala Cantt</span>
-              <span>🏪 50 Shops</span>
-              <span>📅 2021</span>
-            </div>
+        <div class="office-card animate-on-scroll">
+          <img src="assets/images/office_1.jpeg" alt="Office Interior">
+          <div class="office-card-content">
+            <h3>Office Interior</h3>
+            <p>Our main workspace where we handle all property and construction inquiries.</p>
           </div>
         </div>
-        
-        <div class="project-card fade-in" data-category="residential">
-          <div class="project-image">
-            <svg width="100%" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="200" fill="#fef3c7"/>
-              <rect x="40" y="50" width="120" height="130" fill="#f59e0b" rx="6"/>
-              <rect x="180" y="50" width="120" height="130" fill="#f59e0b" rx="6"/>
-              <rect x="320" y="50" width="60" height="130" fill="#f59e0b" rx="6"/>
-              <rect x="60" y="70" width="30" height="40" fill="#fbbf24"/>
-              <rect x="110" y="70" width="30" height="40" fill="#fbbf24"/>
-              <text x="200" y="30" text-anchor="middle" fill="#f59e0b" font-size="16" font-weight="bold">Residential Colony</text>
-            </svg>
-          </div>
-          <div class="project-info">
-            <h4>Green Valley Residency</h4>
-            <p>Gated community with 100+ independent houses and amenities</p>
-            <div class="project-details">
-              <span>📍 Ambala Cantt</span>
-              <span>🏘️ 100 Houses</span>
-              <span>📅 2021</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-card fade-in" data-category="infrastructure">
-          <div class="project-image">
-            <svg width="100%" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="200" fill="#f3f4f6"/>
-              <rect x="20" y="80" width="360" height="40" fill="#6b7280" rx="4"/>
-              <rect x="50" y="60" width="80" height="80" fill="#374151" rx="8"/>
-              <rect x="150" y="60" width="80" height="80" fill="#374151" rx="8"/>
-              <rect x="250" y="60" width="80" height="80" fill="#374151" rx="8"/>
-              <text x="200" y="40" text-anchor="middle" fill="#374151" font-size="16" font-weight="bold">Army Infrastructure</text>
-            </svg>
-          </div>
-          <div class="project-info">
-            <h4>Army Housing Project</h4>
-            <p>Military residential quarters and infrastructure development</p>
-            <div class="project-details">
-              <span>📍 Cantonment</span>
-              <span>🎖️ Army Project</span>
-              <span>📅 2023</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-card fade-in" data-category="commercial">
-          <div class="project-image">
-            <svg width="100%" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="200" fill="#ecfdf5"/>
-              <rect x="60" y="40" width="280" height="140" fill="#065f46" rx="10"/>
-              <rect x="80" y="60" width="60" height="100" fill="#047857"/>
-              <rect x="160" y="60" width="80" height="100" fill="#047857"/>
-              <rect x="260" y="60" width="60" height="100" fill="#047857"/>
-              <text x="200" y="25" text-anchor="middle" fill="#065f46" font-size="16" font-weight="bold">Office Complex</text>
-            </svg>
-          </div>
-          <div class="project-info">
-            <h4>Corporate Office Building</h4>
-            <p>Modern office complex with state-of-the-art facilities</p>
-            <div class="project-details">
-              <span>📍 Ambala City</span>
-              <span>🏢 Office Complex</span>
-              <span>📅 2022</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-card fade-in" data-category="residential">
-          <div class="project-image">
-            <svg width="100%" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="200" fill="#fdf2f8"/>
-              <rect x="80" y="50" width="240" height="130" fill="#be185d" rx="8"/>
-              <rect x="100" y="70" width="50" height="90" fill="#db2777"/>
-              <rect x="170" y="70" width="60" height="90" fill="#db2777"/>
-              <rect x="250" y="70" width="50" height="90" fill="#db2777"/>
-              <text x="200" y="35" text-anchor="middle" fill="#be185d" font-size="16" font-weight="bold">Apartment Complex</text>
-            </svg>
-          </div>
-          <div class="project-info">
-            <h4>Skyline Apartments</h4>
-            <p>High-rise apartment complex with premium amenities</p>
-            <div class="project-details">
-              <span>📍 Ambala Cantt</span>
-              <span>🏢 80 Flats</span>
-              <span>📅 2023</span>
-            </div>
+        <div class="office-card animate-on-scroll">
+          <img src="assets/images/Modern Discussion Area.jpeg" alt="Discussion Area">
+          <div class="office-card-content">
+            <h3>Modern Discussion Area</h3>
+            <p>Professional space for client consultations and strategic planning.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
+  <!-- Recent Projects Section -->
+  <section id="recent-projects">
     <div class="container">
-      <div class="about-section">
-        <div class="section-header">
-          <div class="section-subtitle fade-in">Our Legacy</div>
-          <h2 class="section-title fade-in">Building Trust Since 1999</h2>
-          <p class="section-description fade-in">
-            With over three and a half decades of unwavering commitment to excellence, Daksh Property & Builders has become synonymous with trust, quality, and reliability in Ambala Cantt's real estate landscape.
-          </p>
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Recent Projects</span>
+        <h2>Our Latest Work</h2>
+        <p>Take a look at some of our recently completed projects showcasing our commitment to quality.</p>
+      </div>
+      <div class="slider-container animate-on-scroll">
+        <div id="project-slider-track" class="slider-track">
+          <div class="slider-slide">
+            <figure class="slider-item" data-img-src="assets/images/project_house_1.jpeg" data-caption="Modern Family Home - A beautiful residential house completed with attention to detail.">
+              <img src="assets/images/project_house_1.jpeg" alt="Modern Family Home">
+              <figcaption class="slider-caption">Modern Family Home</figcaption>
+              <p class="slider-description">A beautiful residential house completed with attention to detail and client specifications.</p>
+            </figure>
+          </div>
+          <div class="slider-slide">
+            <figure class="slider-item" data-img-src="assets/images/project_commercial_1.jpeg" data-caption="Retail Shop Development - A new commercial space designed for retail businesses.">
+              <img src="assets/images/project_commercial_1.jpeg" alt="Retail Shop Development">
+              <figcaption class="slider-caption">Retail Shop Development</figcaption>
+              <p class="slider-description">A well-located commercial shop, perfect for various business ventures.</p>
+            </figure>
+          </div>
+          <div class="slider-slide">
+            <figure class="slider-item" data-img-src="assets/images/living-room-renovation.jpeg" data-caption="Living Room Renovation - Modern interior work combining aesthetics and functionality.">
+              <img src="assets/images/living-room-renovation.jpeg" alt="Living Room Renovation">
+              <figcaption class="slider-caption">Living Room Renovation</figcaption>
+              <p class="slider-description">Transforming living spaces with contemporary designs and quality finishes.</p>
+            </figure>
+          </div>
+          <div class="slider-slide">
+            <figure class="slider-item" data-img-src="assets/images/project_land_deal_1.jpeg" data-caption="Agricultural Land Deal - Facilitating the purchase of prime agricultural land.">
+              <img src="assets/images/project_land_deal_1.jpeg" alt="Agricultural Land Deal">
+              <figcaption class="slider-caption">Agricultural Land Deal</figcaption>
+              <p class="slider-description">Assisting clients in securing valuable agricultural land for various purposes.</p>
+            </figure>
+          </div>
+          <div class="slider-slide">
+            <figure class="slider-item" data-img-src="assets/images/Factory-Shed-Construction.jpeg" data-caption="Industrial Shed - A robust industrial shed built for manufacturing operations.">
+              <img src="assets/images/Factory-Shed-Construction.jpeg" alt="Industrial Shed">
+              <figcaption class="slider-caption">Industrial Shed</figcaption>
+              <p class="slider-description">Durable and spacious factory sheds designed to meet industrial requirements.</p>
+            </figure>
+          </div>
         </div>
-        
-        <div class="stats-grid">
-          <div class="stat-item fade-in">
-            <span class="stat-number">35+</span>
-            <div class="stat-label">Years of Excellence</div>
-          </div>
-          <div class="stat-item fade-in">
-            <span class="stat-number">1000+</span>
-            <div class="stat-label">Happy Families</div>
-          </div>
-          <div class="stat-item fade-in">
-            <span class="stat-number">500+</span>
-            <div class="stat-label">Projects Completed</div>
-          </div>
-          <div class="stat-item fade-in">
-            <span class="stat-number">100%</span>
-            <div class="stat-label">Client Satisfaction</div>
-          </div>
-        </div>
+        <button id="prev-project-slide" class="slider-nav-button left-4">&#10094;</button>
+        <button id="next-project-slide" class="slider-nav-button right-4">&#10095;</button>
+        <div id="project-slider-dots" class="slider-dots"></div>
+      </div>
+      <div class="view-all-projects animate-on-scroll">
+        <a href="projects.html">
+          View All Projects
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Certifications Section -->
-  <section id="certifications" class="section" style="background: var(--bg-primary);">
+  <!-- Certificates Section -->
+  <section id="certificates">
     <div class="container">
-      <div class="section-header">
-        <div class="section-subtitle fade-in">Our Credentials</div>
-        <h2 class="section-title fade-in">Certifications & Licenses</h2>
-        <p class="section-description fade-in">Our commitment to excellence is backed by proper certifications, licenses, and industry recognition that ensure quality and compliance.</p>
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Certifications</span>
+        <h2>Our Credentials</h2>
+        <p>We are a certified and recognized firm, holding licenses that reflect our credibility and dedication.</p>
       </div>
-      
-      <div class="certifications-grid">
-        <div class="cert-card fade-in">
-          <div class="cert-icon">🏗️</div>
-          <h4>Construction License</h4>
-          <p>Authorized construction contractor license from Haryana Government</p>
-          <div class="cert-details">
-            <span>Valid: 2024-2029</span>
-            <span>License No: HC/2024/001234</span>
+      <div class="certificates-grid">
+        <div class="certificate-card animate-on-scroll" onclick="openCertificateModal('assets/images/certificates/Plumbing.jpg', 'Plumbing Certification - Daksh Property & Builders')" style="cursor: pointer;">
+          <img src="assets/images/certificates/Plumbing.jpg" alt="Plumbing Certificate">
+          <div class="certificate-card-content">
+            <h3>Plumbing Certification</h3>
+            <p>Plumbing tools and drawings essential for accurate water system installation and maintenance.</p>
           </div>
         </div>
-        
-        <div class="cert-card fade-in">
-          <div class="cert-icon">🏠</div>
-          <h4>Real Estate License</h4>
-          <p>Certified real estate agent and property dealer registration</p>
-          <div class="cert-details">
-            <span>RERA Registered</span>
-            <span>Reg No: HRERA-2024-5678</span>
-          </div>
-        </div>
-        
-        <div class="cert-card fade-in">
-          <div class="cert-icon">🎖️</div>
-          <h4>Army Contractor</h4>
-          <p>Approved contractor for army construction and infrastructure projects</p>
-          <div class="cert-details">
-            <span>Security Clearance</span>
-            <span>Grade: A+ Contractor</span>
-          </div>
-        </div>
-        
-        <div class="cert-card fade-in">
-          <div class="cert-icon">🏆</div>
-          <h4>Quality Certification</h4>
-          <p>ISO 9001:2015 certified for quality management systems</p>
-          <div class="cert-details">
-            <span>ISO 9001:2015</span>
-            <span>Cert No: ISO/2024/9876</span>
-          </div>
-        </div>
-        
-        <div class="cert-card fade-in">
-          <div class="cert-icon">🌱</div>
-          <h4>Green Building</h4>
-          <p>Certified for sustainable and eco-friendly construction practices</p>
-          <div class="cert-details">
-            <span>IGBC Certified</span>
-            <span>Green Building Expert</span>
-          </div>
-        </div>
-        
-        <div class="cert-card fade-in">
-          <div class="cert-icon">⚡</div>
-          <h4>Electrical License</h4>
-          <p>Licensed electrical contractor for all electrical installations</p>
-          <div class="cert-details">
-            <span>Valid: 2024-2027</span>
-            <span>License No: EL/HR/2024/456</span>
+        <div class="certificate-card animate-on-scroll" onclick="openCertificateModal('assets/images/certificates/Construction.jpg', 'Construction Cost Management - Daksh Property & Builders')" style="cursor: pointer;">
+          <img src="assets/images/certificates/Construction.jpg" alt="Construction Certificate">
+          <div class="certificate-card-content">
+            <h3>Construction Cost Management</h3>
+            <p>Process of planning, monitoring, and controlling project expenses within budget.</p>
           </div>
         </div>
       </div>
@@ -1117,293 +1483,294 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section">
+  <section id="contact">
     <div class="container">
-      <div class="section-header">
-        <div class="section-subtitle fade-in">Get In Touch</div>
-        <h2 class="section-title fade-in">Start Your Property Journey Today</h2>
-        <p class="section-description fade-in">Ready to find your dream property or start your construction project? Our expert team is here to guide you every step of the way.</p>
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Contact Us</span>
+        <h2>Let's Start Your Project</h2>
+        <p>Ready to build your dreams? Get in touch with us today for a free consultation.</p>
       </div>
-      
       <div class="contact-grid">
-        <div class="contact-card fade-in">
+        <div class="contact-card animate-on-scroll">
           <div class="contact-icon">📞</div>
-          <h4>Call Us Directly</h4>
-          <p><strong>+91-94165-41416</strong></p>
-		  <p><strong>+91-89505-93945</strong></p>
-          <p>Mon-Sat: 9:00 AM - 7:00 PM<br>Sunday: 10:00 AM - 5:00 PM</p>
+          <h4>Call Us</h4>
+          <a href="tel:+919416541416">+91 9416541416</a>
+          <a href="tel:+918950593945">+91 8950593945</a>
+          <a href="tel:+919596832987">+91 9596832987</a>
         </div>
-        
-        <div class="contact-card fade-in">
-          <div class="contact-icon">📧</div>
-          <h4>Email Support</h4>
-          <p><strong>dakshpropertybuilders@gmail.com</strong></p>
-          <p>Professional consultation<br>Response within 2 hours</p>
+        <div class="contact-card animate-on-scroll">
+          <div class="contact-icon">✉️</div>
+          <h4>Email Us</h4>
+          <a href="mailto:dakshbuilders99@gmail.com">dakshbuilders99@gmail.com</a>
         </div>
-        
-        <div class="contact-card fade-in">
+        <div class="contact-card animate-on-scroll">
           <div class="contact-icon">📍</div>
-          <h4>Visit Our Office</h4>
-          <p><strong>Ambala Cantt, Haryana</strong></p>
-          <p>Near Tangri bridge, Jagadhari Rd, Opp. Gagan Banquet,<br>India - 133001</p>
-        </div>
-        
-        <div class="contact-card fade-in">
-          <div class="contact-icon">💬</div>
-          <h4>WhatsApp Chat</h4>
-          <p><strong>+91-95968-32987</strong></p>
-          <p>Instant responses<br>Share photos & documents</p>
+          <h4>Visit Us</h4>
+          <p>Shop No. 5, Jagadhari Rd, opposite Gagan Banquet, near Tangri Road, Ambala Cantt, Haryana 133006</p>
         </div>
       </div>
-      
-      <div style="text-align: center; margin-top: 3rem;">
-        <a href="https://wa.me/919596832987?text=Hi%20Daksh%20Property%20%26%20Builders%2C%20I%27m%20interested%20in%20your%20services" class="btn btn-primary" target="_blank">
-          💬 Start WhatsApp Chat
+      <div class="whatsapp-cta animate-on-scroll">
+        <a href="https://wa.me/919596832987" target="_blank" class="whatsapp-button">
+          <img src="https://img.icons8.com/color/96/000000/whatsapp.png" alt="WhatsApp">
+          Chat with us on WhatsApp
         </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-            <h3 class="text-xl font-semibold mb-4">Stay Connected</h3>
-            <div class="flex justify-center space-x-6 mb-4">
-                <!-- Footer Social Icons -->
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
-                   class="text-gray-300 hover:text-pink-400 transition-colors duration-300">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
-                   class="text-gray-300 hover:text-blue-400 transition-colors duration-300">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" 
-                   class="text-gray-300 hover:text-red-400 transition-colors duration-300">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    </svg>
-                </a>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/images/logo.jpeg" alt="Daksh Property & Builders">
+          <span>Daksh Property & Builders</span>
         </div>
-      <p style="margin-bottom: 0.5rem;">&copy; 1999 Daksh Property & Builders. All rights reserved.</p>
-      <p style="color: rgba(255, 255, 255, 0.7);">Trusted Real Estate & Construction Excellence in Ambala Cantt, Haryana</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/dakshpropertybuilders" target="_blank">
+            <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/in/daksh-builders-005b48370" target="_blank">
+            <img src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn">
+          </a>
+          <a href="https://maps.app.goo.gl/E4EUe5GubARoDSfG9" target="_blank">
+            <img src="https://img.icons8.com/fluency/48/google-maps-new.png" alt="Google Maps">
+          </a>
+        </div>
+        <p>© 1999 Daksh Property & Builders. All Rights Reserved.</p>
+      </div>
     </div>
   </footer>
 
+  <!-- Certificate Modal -->
+  <div id="certificate-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 700px;">
+      <button id="close-certificate-modal" class="modal-close-button">&times;</button>
+      <img id="certificate-modal-image" src="" alt="Certificate" class="modal-image" style="border-radius: 12px 12px 0 0;">
+      <p id="certificate-modal-caption" class="modal-image-caption"></p>
+    </div>
+  </div>
+
+  <!-- Logo Modal -->
+  <div id="logo-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 500px; background: transparent; box-shadow: none;">
+      <button id="close-logo-modal" class="modal-close-button">&times;</button>
+      <img src="assets/images/logo.jpeg" alt="Daksh Property & Builders Logo" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+      <p class="modal-image-caption" style="color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Daksh Property & Builders</p>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="image-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="close-modal" class="modal-close-button">&times;</button>
+      <img id="modal-image" src="" alt="Project Image" class="modal-image">
+      <p id="modal-caption" class="modal-image-caption"></p>
+    </div>
+  </div>
+
   <script>
-    // Enhanced JavaScript functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      // Loading animation
-      const loadingOverlay = document.getElementById('loadingOverlay');
-      setTimeout(() => {
-        loadingOverlay.style.opacity = '0';
-        setTimeout(() => {
-          loadingOverlay.style.display = 'none';
-        }, 500);
-      }, 1000);
+    // Certificate Modal functionality
+    const certificateModal = document.getElementById('certificate-modal');
+    const certificateModalImage = document.getElementById('certificate-modal-image');
+    const certificateModalCaption = document.getElementById('certificate-modal-caption');
+    const closeCertificateModalBtn = document.getElementById('close-certificate-modal');
 
-      // Navbar scroll effect
-      const navbar = document.getElementById('navbar');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      });
+    function openCertificateModal(imgSrc, caption) {
+      certificateModalImage.src = imgSrc;
+      certificateModalCaption.textContent = caption;
+      certificateModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
 
-      // Scroll progress bar
-      const scrollProgress = document.getElementById('scrollProgress');
-      window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        scrollProgress.style.width = scrollPercent + '%';
-      });
+    function closeCertificateModal() {
+      certificateModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
 
-      // Mobile menu toggle
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const navLinks = document.getElementById('navLinks');
-      
-      mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-      });
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-              top: offsetTop,
-              behavior: 'smooth'
-            });
-            // Close mobile menu if open
-            navLinks.classList.remove('active');
-            mobileMenuBtn.textContent = '☰';
-          }
-        });
-      });
-
-      // Project filtering functionality
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const projectCards = document.querySelectorAll('.project-card');
-
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Remove active class from all buttons
-          filterBtns.forEach(b => b.classList.remove('active'));
-          // Add active class to clicked button
-          btn.classList.add('active');
-
-          const filter = btn.getAttribute('data-filter');
-
-          projectCards.forEach(card => {
-            if (filter === 'all' || card.getAttribute('data-category') === filter) {
-              card.style.display = 'block';
-              setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-              }, 100);
-            } else {
-              card.style.opacity = '0';
-              card.style.transform = 'translateY(20px)';
-              setTimeout(() => {
-                card.style.display = 'none';
-              }, 300);
-            }
-          });
-        });
-      });
-
-      // Enhanced Intersection Observer for animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add('visible');
-            }, index * 100);
-          }
-        });
-      }, observerOptions);
-
-      // Observe all animated elements
-      document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-        observer.observe(el);
-      });
-
-      // Add parallax effect to hero section
-      window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-          hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-      });
-
-      // Add typing effect to hero title
-      const heroTitle = document.querySelector('.hero h1');
-      if (heroTitle) {
-        const text = heroTitle.textContent;
-        heroTitle.textContent = '';
-        let i = 0;
-        
-        setTimeout(() => {
-          const typeWriter = () => {
-            if (i < text.length) {
-              heroTitle.textContent += text.charAt(i);
-              i++;
-              setTimeout(typeWriter, 100);
-            }
-          };
-          typeWriter();
-        }, 1500);
+    closeCertificateModalBtn.addEventListener('click', closeCertificateModal);
+    certificateModal.addEventListener('click', (event) => {
+      if (event.target === certificateModal) {
+        closeCertificateModal();
       }
+    });
 
-      // Add counter animation to stats
-      const animateCounters = () => {
-        const counters = document.querySelectorAll('.stat-number');
-        counters.forEach(counter => {
-          const target = parseInt(counter.textContent.replace(/\D/g, ''));
-          const suffix = counter.textContent.replace(/\d/g, '');
-          let current = 0;
-          const increment = target / 100;
-          
-          const updateCounter = () => {
-            if (current < target) {
-              current += increment;
-              counter.textContent = Math.ceil(current) + suffix;
-              requestAnimationFrame(updateCounter);
-            } else {
-              counter.textContent = target + suffix;
-            }
-          };
-          
-          updateCounter();
-        });
-      };
+    // Logo Modal functionality
+    const logoModal = document.getElementById('logo-modal');
+    const closeLogoModalBtn = document.getElementById('close-logo-modal');
 
-      // Trigger counter animation when stats section is visible
-      const statsSection = document.querySelector('.stats-grid');
-      if (statsSection) {
-        const statsObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              animateCounters();
-              statsObserver.unobserve(entry.target);
-            }
-          });
-        });
-        statsObserver.observe(statsSection);
+    function openLogoModal() {
+      logoModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLogoModal() {
+      logoModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    closeLogoModalBtn.addEventListener('click', closeLogoModal);
+    logoModal.addEventListener('click', (event) => {
+      if (event.target === logoModal) {
+        closeLogoModal();
       }
+    });
 
-      // Add hover effects to service cards
-      document.querySelectorAll('.service-card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-          card.style.transform = 'translateY(-8px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = 'translateY(0) scale(1)';
-        });
-      });
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
 
-      // Add click tracking for analytics (placeholder)
-      document.querySelectorAll('.btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          console.log('Button clicked:', e.target.textContent.trim());
-          // Add your analytics tracking code here
-        });
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
       });
     });
 
-    // Add smooth reveal animation on page load
-    window.addEventListener('load', () => {
-      document.body.style.opacity = '1';
-      
-      // Trigger initial animations
-      setTimeout(() => {
-        document.querySelectorAll('.fade-in').forEach((el, index) => {
-          setTimeout(() => {
-            el.classList.add('visible');
-          }, index * 200);
+    // Scroll animations
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    animateElements.forEach(el => observer.observe(el));
+
+    // Project Slider
+    const projectSliderTrack = document.getElementById('project-slider-track');
+    const projectSlides = Array.from(projectSliderTrack.children);
+    const prevProjectButton = document.getElementById('prev-project-slide');
+    const nextProjectButton = document.getElementById('next-project-slide');
+    const projectSliderDotsContainer = document.getElementById('project-slider-dots');
+
+    let currentProjectIndex = 0;
+
+    function updateProjectSliderPosition() {
+      projectSliderTrack.style.transform = `translateX(-${currentProjectIndex * 100}%)`;
+      updateProjectDots();
+    }
+
+    function showProjectSlide(index) {
+      if (index >= projectSlides.length) {
+        currentProjectIndex = 0;
+      } else if (index < 0) {
+        currentProjectIndex = projectSlides.length - 1;
+      } else {
+        currentProjectIndex = index;
+      }
+      updateProjectSliderPosition();
+    }
+
+    function nextProjectSlide() {
+      showProjectSlide(currentProjectIndex + 1);
+    }
+
+    function prevProjectSlide() {
+      showProjectSlide(currentProjectIndex - 1);
+    }
+
+    function createProjectDots() {
+      projectSliderDotsContainer.innerHTML = '';
+      projectSlides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('slider-dot');
+        if (index === currentProjectIndex) {
+          dot.classList.add('active');
+        }
+        dot.addEventListener('click', () => showProjectSlide(index));
+        projectSliderDotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateProjectDots() {
+      const dots = Array.from(projectSliderDotsContainer.children);
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentProjectIndex);
+      });
+    }
+
+    prevProjectButton.addEventListener('click', prevProjectSlide);
+    nextProjectButton.addEventListener('click', nextProjectSlide);
+
+    // Auto-slide every 5 seconds
+    setInterval(nextProjectSlide, 5000);
+
+    // Initialize
+    createProjectDots();
+
+    // Image Modal
+    const imageModal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalCaption = document.getElementById('modal-caption');
+    const closeModalButton = document.getElementById('close-modal');
+
+    function openModal(imgSrc, captionText) {
+      modalImage.src = imgSrc;
+      modalCaption.textContent = captionText;
+      imageModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      imageModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    closeModalButton.addEventListener('click', closeModal);
+    imageModal.addEventListener('click', (event) => {
+      if (event.target === imageModal) {
+        closeModal();
+      }
+    });
+
+    // Add click listeners to slider items
+    projectSlides.forEach(slide => {
+      const figure = slide.querySelector('.slider-item');
+      if (figure) {
+        figure.addEventListener('click', () => {
+          const imgSrc = figure.dataset.imgSrc;
+          const captionText = figure.dataset.caption;
+          openModal(imgSrc, captionText);
         });
-      }, 1200);
+      }
+    });
+
+    // Keyboard support for modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (imageModal.classList.contains('active')) {
+          closeModal();
+        }
+        if (logoModal.classList.contains('active')) {
+          closeLogoModal();
+        }
+        if (certificateModal.classList.contains('active')) {
+          closeCertificateModal();
+        }
+      }
     });
   </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97d61b2b23175523',t:'MTc1NzU4MjYwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>

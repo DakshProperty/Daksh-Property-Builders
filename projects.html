@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Projects - Daksh Property & Builders</title>
+  <meta name="description" content="Explore our portfolio of completed construction, real estate, and renovation projects in Ambala Cantt and surrounding areas.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #0a1628;
+      --primary-light: #1a2d4a;
+      --secondary: #c9a227;
+      --secondary-light: #e8c547;
+      --accent: #25D366;
+      --text-dark: #1a1a1a;
+      --text-medium: #4a5568;
+      --text-light: #718096;
+      --bg-light: #f8f9fc;
+      --bg-cream: #fdfbf7;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.08);
+      --shadow-md: 0 8px 24px rgba(10, 22, 40, 0.12);
+      --shadow-lg: 0 16px 48px rgba(10, 22, 40, 0.16);
+      --shadow-gold: 0 8px 32px rgba(201, 162, 39, 0.25);
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--primary);
+    }
+
+    h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
+    h3 { font-size: clamp(1.125rem, 2vw, 1.35rem); }
+
+    p { color: var(--text-medium); margin-bottom: 1rem; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 1rem 0;
+      transition: all var(--transition-smooth);
+    }
+
+    .navbar.scrolled {
+      padding: 0.75rem 0;
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-img {
+      height: 48px;
+      width: auto;
+      border-radius: 8px;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .logo-text span { color: var(--secondary); }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width var(--transition-smooth);
+    }
+
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--secondary); }
+    .nav-links a.active::after { width: 100%; }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--white);
+      transition: all var(--transition-fast);
+      transform-origin: center;
+    }
+
+    .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--primary);
+      z-index: 999;
+      padding: 100px 2rem 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-smooth);
+    }
+
+    .mobile-menu.active { opacity: 1; visibility: visible; }
+
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .mobile-menu a {
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 500;
+      display: block;
+      transform: translateX(-20px);
+      opacity: 0;
+      transition: all var(--transition-smooth);
+    }
+
+    .mobile-menu.active a { transform: translateX(0); opacity: 1; }
+    .mobile-menu.active li:nth-child(1) a { transition-delay: 0.1s; }
+    .mobile-menu.active li:nth-child(2) a { transition-delay: 0.15s; }
+    .mobile-menu.active li:nth-child(3) a { transition-delay: 0.2s; }
+    .mobile-menu.active li:nth-child(4) a { transition-delay: 0.25s; }
+    .mobile-menu.active li:nth-child(5) a { transition-delay: 0.3s; }
+    .mobile-menu.active li:nth-child(6) a { transition-delay: 0.35s; }
+
+    /* Page Header */
+    .page-header {
+      position: relative;
+      padding: 10rem 0 5rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #2d4a6a 100%);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse at 20% 50%, rgba(201, 162, 39, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(201, 162, 39, 0.08) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .page-header-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .page-header-content { position: relative; z-index: 1; }
+
+    .breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .breadcrumb a { color: rgba(255, 255, 255, 0.7); }
+    .breadcrumb a:hover { color: var(--secondary); }
+    .breadcrumb svg { width: 16px; height: 16px; }
+    .breadcrumb span { color: var(--secondary); }
+
+    .page-header h1 {
+      color: var(--white);
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out 0.1s backwards;
+    }
+
+    /* Filter Tabs */
+    .filter-section {
+      background: var(--white);
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      position: sticky;
+      top: 72px;
+      z-index: 100;
+    }
+
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      padding: 0.625rem 1.25rem;
+      border: 2px solid transparent;
+      background: var(--bg-light);
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .filter-tab:hover {
+      background: var(--bg-cream);
+      border-color: var(--secondary);
+      color: var(--primary);
+    }
+
+    .filter-tab.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    /* Projects Grid */
+    .projects-section {
+      padding: 4rem 0 6rem;
+      background: var(--bg-light);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: all var(--transition-smooth);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .project-card:nth-child(1) { animation-delay: 0.1s; }
+    .project-card:nth-child(2) { animation-delay: 0.2s; }
+    .project-card:nth-child(3) { animation-delay: 0.3s; }
+    .project-card:nth-child(4) { animation-delay: 0.4s; }
+    .project-card:nth-child(5) { animation-delay: 0.5s; }
+    .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+    .project-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-card-image {
+      position: relative;
+      overflow: hidden;
+      height: 240px;
+    }
+
+    .project-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-smooth);
+    }
+
+    .project-card:hover .project-card-image img { transform: scale(1.08); }
+
+    .project-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 22, 40, 0.8) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition-smooth);
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem;
+    }
+
+    .project-card:hover .project-card-overlay { opacity: 1; }
+
+    .project-card-overlay span {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-card-overlay svg { width: 20px; height: 20px; }
+
+    .project-card-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 0.375rem 0.875rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-card-content { padding: 1.5rem; }
+
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+      transition: color var(--transition-fast);
+    }
+
+    .project-card:hover h3 { color: var(--secondary); }
+
+    .project-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .cta-content { max-width: 600px; margin: 0 auto; }
+    .cta-content h2 { color: var(--white); margin-bottom: 1rem; font-size: clamp(1.75rem, 3vw, 2.5rem); }
+    .cta-content p { color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; margin-bottom: 2rem; }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all var(--transition-smooth);
+    }
+
+    .cta-button.primary {
+      background: var(--secondary);
+      color: var(--primary);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .cta-button.primary:hover {
+      background: var(--secondary-light);
+      transform: translateY(-3px);
+    }
+
+    .cta-button.secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .cta-button.secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--white);
+    }
+
+    /* Footer */
+    footer {
+      background: #050d18;
+      color: var(--white);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo img { height: 50px; border-radius: 8px; }
+
+    .footer-logo span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-social a {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+    }
+
+    .footer-social a:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    .footer-social img { width: 24px; height: 24px; }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-smooth);
+    }
+
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+
+    .modal-content {
+      background: var(--white);
+      border-radius: 16px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow: hidden;
+      position: relative;
+      transform: scale(0.9);
+      transition: transform var(--transition-smooth);
+    }
+
+    .modal-overlay.active .modal-content { transform: scale(1); }
+
+    .modal-close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      z-index: 10;
+    }
+
+    .modal-close-button:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .modal-image {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+    }
+
+    .modal-caption {
+      padding: 1.5rem;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: flex; }
+      .mobile-menu { display: block; }
+      .projects-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .filter-tabs { gap: 0.5rem; }
+      .filter-tab { padding: 0.5rem 1rem; font-size: 0.85rem; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .cta-button { width: 100%; max-width: 280px; justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .page-header { padding: 8rem 0 4rem; }
+      .page-header h1 { font-size: 2rem; }
+      .project-card-image { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="assets/images/logo.jpeg" alt="Daksh Property & Builders" class="logo-img" id="navLogo" style="cursor: pointer;" onclick="openLogoModal()">
+        <span class="logo-text">Daksh <span>Property & Builders</span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#office">Office</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#office">Office</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="page-header-pattern"></div>
+    <div class="container">
+      <div class="page-header-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+          <span>Projects</span>
+        </div>
+        <h1>Our Project Gallery</h1>
+        <p>A showcase of our construction, real estate, and renovation work that reflects our commitment to quality and excellence.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All Projects</button>
+        <button class="filter-tab" data-filter="construction">Construction</button>
+        <button class="filter-tab" data-filter="interior">Interior</button>
+        <button class="filter-tab" data-filter="industrial">Industrial</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-section">
+    <div class="container">
+      <div class="projects-grid" id="projectsGrid">
+        
+        <!-- Project 1 - Acrylic Sheet Work -->
+        <div class="project-card" data-category="interior" data-img="assets/images/project_images/Acralic_Sheet_work.jpeg" data-caption="Elegant and durable acrylic sheet designs crafted with precision and modern style.">
+          <div class="project-card-image">
+            <img src="assets/images/project_images/Acralic_Sheet_work.jpeg" alt="Acrylic Sheet Work">
+            <div class="project-card-overlay">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+                View Project
+              </span>
+            </div>
+            <span class="project-card-badge">Interior</span>
+          </div>
+          <div class="project-card-content">
+            <h3>Acrylic Sheet Work</h3>
+            <p>Elegant and durable acrylic sheet designs crafted with precision and modern style.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 - PVC Wall Work -->
+        <div class="project-card" data-category="interior" data-img="assets/images/project_images/PVC-Work.jpg" data-caption="Durable PVC wall solutions with modern elegance and long-lasting finish.">
+          <div class="project-card-image">
+            <img src="assets/images/project_images/PVC-Work.jpg" alt="PVC Wall Work">
+            <div class="project-card-overlay">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+                View Project
+              </span>
+            </div>
+            <span class="project-card-badge">Interior</span>
+          </div>
+          <div class="project-card-content">
+            <h3>PVC Wall Work</h3>
+            <p>Durable PVC wall solutions with modern elegance and long-lasting finish.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 - Living Room Renovation -->
+        <div class="project-card" data-category="interior" data-img="assets/images/living-room-renovation.jpeg" data-caption="Living Room Renovation - Transforming living spaces with contemporary designs and quality finishes.">
+          <div class="project-card-image">
+            <img src="assets/images/living-room-renovation.jpeg" alt="Living Room Renovation">
+            <div class="project-card-overlay">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+                View Project
+              </span>
+            </div>
+            <span class="project-card-badge">Interior</span>
+          </div>
+          <div class="project-card-content">
+            <h3>Living Room Renovation</h3>
+            <p>Transforming living spaces with contemporary designs and quality finishes.</p>
+          </div>
+        </div>
+
+        <!-- Project 4 - Fiber Shade -->
+        <div class="project-card" data-category="construction" data-img="assets/images/project_images/Fiber_Shade_work.jpg" data-caption="Durable Fiber Shade - Premium fiber shade built for Army School with lasting quality.">
+          <div class="project-card-image">
+            <img src="assets/images/project_images/Fiber_Shade_work.jpg" alt="Fiber Shade Work">
+            <div class="project-card-overlay">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+                View Project
+              </span>
+            </div>
+            <span class="project-card-badge">Construction</span>
+          </div>
+          <div class="project-card-content">
+            <h3>Fiber Shade</h3>
+            <p>Durable fiber shade installed at Army School with premium quality materials.</p>
+          </div>
+        </div>
+
+        <!-- Project 5 - Industrial Shed -->
+        <div class="project-card" data-category="industrial" data-img="assets/images/Factory-Shed-Construction.jpeg" data-caption="Industrial Shed - Durable and spacious factory shed construction for manufacturing operations.">
+          <div class="project-card-image">
+            <img src="assets/images/Factory-Shed-Construction.jpeg" alt="Industrial Shed">
+            <div class="project-card-overlay">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+                View Project
+              </span>
+            </div>
+            <span class="project-card-badge">Industrial</span>
+          </div>
+          <div class="project-card-content">
+            <h3>Industrial Shed</h3>
+            <p>Durable and spacious factory shed construction for manufacturing operations.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Start Your Project?</h2>
+        <p>Let's discuss your construction or real estate needs. Our team is ready to bring your vision to life with 35+ years of expertise.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/919596832987" target="_blank" class="cta-button primary">
+            <img src="https://img.icons8.com/color/24/whatsapp.png" alt="WhatsApp" style="width: 24px; height: 24px;">
+            Chat on WhatsApp
+          </a>
+          <a href="index.html#contact" class="cta-button secondary">
+            View Contact Info
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/images/logo.jpeg" alt="Daksh Property & Builders">
+          <span>Daksh Property & Builders</span>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/dakshpropertybuilders" target="_blank">
+            <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/in/daksh-builders-005b48370" target="_blank">
+            <img src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn">
+          </a>
+          <a href="https://maps.app.goo.gl/E4EUe5GubARoDSfG9" target="_blank">
+            <img src="https://img.icons8.com/fluency/48/google-maps-new.png" alt="Google Maps">
+          </a>
+        </div>
+        <p>© 1999 Daksh Property & Builders. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Logo Modal -->
+  <div id="logo-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 500px; background: transparent; box-shadow: none;">
+      <button id="close-logo-modal" class="modal-close-button">&times;</button>
+      <img src="assets/images/logo.jpeg" alt="Daksh Property & Builders Logo" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+      <p class="modal-caption" style="color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Daksh Property & Builders</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="image-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="close-modal" class="modal-close-button">&times;</button>
+      <img id="modal-image" src="" alt="Project Image" class="modal-image">
+      <p id="modal-caption" class="modal-caption"></p>
+    </div>
+  </div>
+
+  <script>
+    // Logo Modal functionality
+    const logoModal = document.getElementById('logo-modal');
+    const closeLogoModalBtn = document.getElementById('close-logo-modal');
+
+    function openLogoModal() {
+      logoModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLogoModal() {
+      logoModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    closeLogoModalBtn.addEventListener('click', closeLogoModal);
+    logoModal.addEventListener('click', (event) => {
+      if (event.target === logoModal) {
+        closeLogoModal();
+      }
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Filter functionality
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        const filter = tab.dataset.filter;
+        
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'block';
+            card.style.animation = 'fadeInUp 0.6s ease-out forwards';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Modal functionality
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-image');
+    const modalCaption = document.getElementById('modal-caption');
+    const closeModal = document.getElementById('close-modal');
+
+    projectCards.forEach(card => {
+      card.addEventListener('click', () => {
+        modal.classList.add('active');
+        modalImg.src = card.dataset.img;
+        modalCaption.textContent = card.dataset.caption;
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (modal.classList.contains('active')) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+        if (logoModal.classList.contains('active')) {
+          closeLogoModal();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
